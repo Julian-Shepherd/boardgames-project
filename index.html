@@ -223,28 +223,7 @@
                 movementText.style.fontSize = "18px";
                 movementText.style.fontWeight = "bold";
 
-                // Touch support
-                canvas.addEventListener("touchstart", (e) => {
-                    isDragging = true;
-                    lastMouseX = e.touches[0].clientX;
-                    lastMouseY = e.touches[0].clientY;
-                });
-
-                canvas.addEventListener("touchend", () => {
-                    isDragging = false;
-                });
-
-                canvas.addEventListener("touchmove", (e) => {
-                    if (!isDragging) return;
-                    const touch = e.touches[0];
-                    const dx = touch.clientX - lastMouseX;
-                    const dy = touch.clientY - lastMouseY;
-                    offsetX += dx;
-                    offsetY += dy;
-                    lastMouseX = touch.clientX;
-                    lastMouseY = touch.clientY;
-                    simulateShot();
-                });
+                
 
             }
         </script>
